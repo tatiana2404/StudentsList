@@ -1,11 +1,14 @@
 package com.company;
 
-public class Human {
+import java.io.Serializable;
+
+public class Human implements Serializable {
+
     private String surname;
     private String name;
     private int age;
     Sex gender;
-    public Human(){};
+    public Human(){}
     public  Human(String surname, String name, int age, Sex gender){
         this.surname=surname;
         this.name=name;

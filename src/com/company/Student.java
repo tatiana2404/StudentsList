@@ -1,22 +1,17 @@
 package com.company;
 
-public class Student extends Human{
-    private String numberGroup;
+import java.io.Serializable;
+
+public class Student extends Human implements Serializable {
+
+
     private int course;
     private String recordBook;
     public Student(){}
-    public Student(String surname, String name, int age, Sex gender, String numberGroup, int course, String recordBook){
+    public Student(String surname, String name, int age, Sex gender, int course, String recordBook){
         super(surname, name, age, gender);
-        this.numberGroup=numberGroup;
         this.course=course;
         this.recordBook=recordBook;
-    }
-    public String getNumberGroup() {
-        return numberGroup;
-    }
-
-    public void setNumberGroup(String group) {
-        this.numberGroup = group;
     }
 
     public int getCourse() {
@@ -33,11 +28,9 @@ public class Student extends Human{
     public void setRecordBook(String recordBook) {
         this.recordBook = recordBook;
     }
-
     @Override
     public String toString() {
-        return "Студент " +super.toString()+
-                ", group='" + numberGroup + '\'' +
+        return "Студент " +super.toString()+ '\'' +
                 ", course=" + course +
                 ", recordBook='" + recordBook + '\'' +
                 ", gender=" + gender;
